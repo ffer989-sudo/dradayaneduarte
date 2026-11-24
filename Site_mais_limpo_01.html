@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dra. Dayane M Duarte | Medicina de Família e Cuidado Integral</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-cream: #faf7f2;
+            --bg-white: #ffffff;
+            --bg-sand: #f2ece3;
+            --plum: #3b2836;
+            --plum-soft: #5a3f53;
+            --rose: #b86b5e;
+            --rose-light: #e8c5be;
+            --text-main: #231f20;
+            --text-muted: #665f61;
+            --whatsapp: #22c55e;
+            --border: #e6dfd5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-cream);
+            color: var(--text-main);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.65;
+        }
+
+        h1, h2, h3, .brand-serif {
+            font-family: 'Fraunces', serif;
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navbar clara e flutuante */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(250, 247, 242, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 76px;
+        }
+
+        .brand {
+            text-decoration: none;
+            color: var(--plum);
+            font-size: 1.35rem;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .brand span {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--rose);
+            font-weight: 700;
+            margin-top: 3px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 28px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--rose);
+        }
+
+        .btn-wa {
+            background: var(--whatsapp);
+            color: #fff;
+            text-decoration: none;
+            padding: 11px 20px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.2s, opacity 0.2s;
+        }
+
+        .btn-wa:hover {
+            transform: translateY(-2px);
+            opacity: 0.95;
+        }
+
+        .btn-outline {
+            border: 1.5px solid var(--plum);
+            color: var(--plum);
+            background: transparent;
+            text-decoration: none;
+            padding: 11px 20px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+        }
+
+        .btn-outline:hover {
+            background: var(--plum);
+            color: #fff;
+        }
+
+        /* Hero Editorial Assimétrico */
+        .hero {
+            padding: 56px 0 72px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            background: var(--bg-sand);
+            color: var(--plum);
+            padding: 6px 14px;
+            border-radius: 999px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            margin-bottom: 18px;
+            border: 1px solid var(--border);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.3rem, 4.2vw, 3.4rem);
+            color: var(--plum);
+            line-height: 1.12;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--rose);
+            font-weight: 500;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 26px;
+            max-width: 540px;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 28px;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            font-size: 0.88rem;
+            color: var(--text-muted);
+        }
+
+        .hero-meta strong {
+            color: var(--plum);
+        }
+
+        .photo-frame {
+            position: relative;
+            background: var(--bg-sand);
+            border-radius: 160px 160px 28px 28px;
+            padding: 14px;
+            border: 1px solid var(--border);
+            box-shadow: 0 24px 50px rgba(59, 40, 54, 0.08);
+        }
+
+        .photo-frame img {
+            width: 100%;
+            aspect-ratio: 4 / 4.6;
+            object-fit: cover;
+            object-position: center top;
+            border-radius: 148px 148px 20px 20px;
+            display: block;
+        }
+
+        .floating-note {
+            position: absolute;
+            bottom: 24px;
+            left: -20px;
+            background: var(--bg-white);
+            border: 1px solid var(--border);
+            padding: 14px 18px;
+            border-radius: 16px;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+            max-width: 230px;
+        }
+
+        .floating-note small {
+            display: block;
+            color: var(--rose);
+            font-weight: 700;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .floating-note span {
+            font-size: 0.86rem;
+            color: var(--plum);
+            font-weight: 600;
+        }
+
+        /* Seções */
+        section {
+            padding: 76px 0;
+        }
+
+        .section-head {
+            margin-bottom: 36px;
+        }
+
+        .section-head.center {
+            text-align: center;
+        }
+
+        .section-head h2 {
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            color: var(--plum);
+            margin-bottom: 8px;
+        }
+
+        .section-head p {
+            color: var(--text-muted);
+        }
+
+        /* Sobre em faixa lateral */
+        .about-strip {
+            background: var(--bg-white);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .about-layout {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 44px;
+            align-items: start;
+        }
+
+        .quote-box {
+            background: var(--bg-cream);
+            border-left: 4px solid var(--rose);
+            padding: 24px;
+            border-radius: 0 16px 16px 0;
+            font-family: 'Fraunces', serif;
+            font-size: 1.15rem;
+            color: var(--plum);
+        }
+
+        .about-copy p {
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        /* Abas Interativas de Cuidado */
+        .tabs-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 28px;
+        }
+
+        .tab-btn {
+            background: var(--bg-white);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            padding: 10px 18px;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background: var(--plum);
+            color: #fff;
+            border-color: var(--plum);
+        }
+
+        .tab-panel {
+            display: none;
+            background: var(--bg-white);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 32px;
+        }
+
+        .tab-panel.active {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .tab-panel h3 {
+            font-size: 1.6rem;
+            color: var(--plum);
+            margin-bottom: 12px;
+        }
+
+        .tab-panel p {
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .chip {
+            background: var(--bg-cream);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 0.84rem;
+            color: var(--plum);
+            font-weight: 500;
+        }
+
+        .highlight-box {
+            background: var(--bg-sand);
+            padding: 24px;
+            border-radius: 18px;
+        }
+
+        .highlight-box h4 {
+            color: var(--plum);
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        .highlight-box ul {
+            list-style: none;
+            color: var(--text-muted);
+            font-size: 0.92rem;
+        }
+
+        .highlight-box li {
+            margin-bottom: 8px;
+            padding-left: 18px;
+            position: relative;
+        }
+
+        .highlight-box li::before {
+            content: "•";
+            color: var(--rose);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Consultório e Serviços */
+        .care-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .care-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .care-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+
+        .care-top h3 {
+            font-size: 1.35rem;
+            color: var(--plum);
+        }
+
+        .badge-price {
+            background: var(--bg-sand);
+            color: var(--plum);
+            font-weight: 700;
+            font-size: 0.88rem;
+            padding: 6px 12px;
+            border-radius: 10px;
+            white-space: nowrap;
+        }
+
+        .care-card p {
+            color: var(--text-muted);
+            font-size: 0.94rem;
+            margin-bottom: 12px;
+        }
+
+        .care-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 16px;
+        }
+
+        /* Avaliações */
+        .reviews-section {
+            background: var(--bg-sand);
+            border-top: 1px solid var(--border);
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 18px;
+            margin-bottom: 40px;
+        }
+
+        .review-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 22px;
+            position: relative;
+        }
+
+        .stars {
+            color: var(--rose);
+            font-size: 0.82rem;
+            margin-bottom: 10px;
+        }
+
+        .review-text {
+            font-style: italic;
+            color: var(--text-muted);
+            font-size: 0.93rem;
+            margin-bottom: 12px;
+        }
+
+        .review-author {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--plum);
+        }
+
+        .btn-delete {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            background: #dc2626;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 4px 9px;
+            font-size: 0.75rem;
+            cursor: pointer;
+            display: none;
+        }
+
+        .review-form-box {
+            max-width: 680px;
+            margin: 0 auto;
+            background: var(--bg-white);
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            padding: 32px;
+        }
+
+        .review-form-box h3 {
+            color: var(--plum);
+            font-size: 1.5rem;
+            margin-bottom: 6px;
+        }
+
+        .review-form-box > p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .field {
+            margin-bottom: 16px;
+        }
+
+        .field label {
+            display: block;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--plum);
+            margin-bottom: 6px;
+        }
+
+        .field input, .field textarea {
+            width: 100%;
+            padding: 12px 14px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            background: var(--bg-cream);
+            font-family: inherit;
+            font-size: 0.95rem;
+        }
+
+        .field textarea {
+            min-height: 105px;
+            resize: vertical;
+        }
+
+        .btn-send {
+            width: 100%;
+            background: var(--plum);
+            color: #fff;
+            border: none;
+            padding: 13px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.98rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-send:hover {
+            background: var(--plum-soft);
+        }
+
+        footer {
+            background: var(--plum);
+            color: #f3ece8;
+            padding: 36px 0;
+            text-align: center;
+            font-size: 0.88rem;
+        }
+
+        footer small {
+            display: block;
+            margin-top: 6px;
+            color: var(--rose-light);
+        }
+
+        .wa-float {
+            position: fixed;
+            right: 24px;
+            bottom: 24px;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: var(--whatsapp);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            text-decoration: none;
+            box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+            z-index: 90;
+        }
+
+        @media (max-width: 860px) {
+            .hero-grid, .about-layout, .care-grid, .tab-panel.active {
+                grid-template-columns: 1fr;
+            }
+            .floating-note {
+                position: static;
+                margin-top: 14px;
+                max-width: 100%;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-inner">
+            <a href="#" class="brand brand-serif">
+                Dra. Dayane M Duarte
+                <span>Medicina de Família • Campinas</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#cuidado">Áreas de Cuidado</a></li>
+                <li><a href="#consultorio">Consultório</a></li>
+                <li><a href="#avaliacoes">Avaliações</a></li>
+            </ul>
+            <a href="https://wa.me/5519993963800?text=Olá%20Dra.%20Dayane,%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" class="btn-wa">
+                <i class="fa-brands fa-whatsapp"></i> WhatsApp
+            </a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-grid">
+            <div>
+                <span class="eyebrow">CRM-SP 264626 • Clínica Duarte Medicina de Excelência</span>
+                <h1>Medicina feita com <em>ciência, escuta</em> e cuidado individualizado.</h1>
+                <p>Acompanhamento próximo para quem quer emagrecer com sustentabilidade, cuidar da saúde da mulher, prevenir doenças e cultivar equilíbrio entre corpo e mente.</p>
+                <div class="hero-actions">
+                    <a href="https://wa.me/5519993963800?text=Olá%20Dra.%20Dayane,%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" class="btn-wa">
+                        <i class="fa-brands fa-whatsapp"></i> Agendar pelo WhatsApp
+                    </a>
+                    <a href="https://www.doctoralia.com.br/perfil/dayane-m-duarte" target="_blank" class="btn-outline">
+                        <i class="fa-regular fa-calendar"></i> Ver na Doctoralia
+                    </a>
+                </div>
+                <div class="hero-meta">
+                    <div><strong>Local:</strong> Vila Itapura, Campinas/SP</div>
+                    <div><strong>Atendimento:</strong> Particular (PIX)</div>
+                    <div><strong>Avaliações:</strong> 14 opiniões verificadas</div>
+                </div>
+            </div>
+
+            <div class="photo-frame">
+                <img src="https://pixel-p1.s3.sa-east-1.amazonaws.com/doctor/avatar/d80e687d/d80e687d-4ab5-4af6-90f5-e79ef07d7aac_large.jpg" alt="Dra. Dayane M Duarte">
+                <div class="floating-note">
+                    <small>Olhar Integral</small>
+                    <span>Sem fórmulas prontas: plano feito para a sua rotina.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre" class="about-strip">
+        <div class="container about-layout">
+            <div class="quote-box">
+                “Cuidar da saúde é um processo, e será um prazer caminhar ao seu lado nessa jornada.”
+            </div>
+            <div class="about-copy">
+                <div class="section-head" style="margin-bottom: 18px;">
+                    <h2>Sobre a Dra. Dayane</h2>
+                </div>
+                <p>Sou médica de família e comunidade e acredito que a medicina deve ser feita com ciência, escuta e cuidado individualizado.</p>
+                <p>Atendo pessoas que desejam melhorar a saúde, emagrecer de forma sustentável, cuidar da saúde da mulher e prevenir doenças, sempre com um olhar integral para o corpo e a mente.</p>
+                <p>Cada consulta é construída de forma personalizada, porque não existem tratamentos prontos para todos. Meu objetivo é entender a sua história, identificar os fatores que influenciam sua saúde e elaborar um plano de cuidados que faça sentido na sua vida.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="cuidado">
+        <div class="container">
+            <div class="section-head center">
+                <h2>Como posso ajudar você</h2>
+                <p>Selecione uma área para ver os principais focos de acompanhamento</p>
+            </div>
+
+            <div class="tabs-nav">
+                <button class="tab-btn active" onclick="abrirAba('emagrecimento', this)">Emagrecimento &amp; Metabolismo</button>
+                <button class="tab-btn" onclick="abrirAba('mulher', this)">Saúde da Mulher</button>
+                <button class="tab-btn" onclick="abrirAba('cronicas', this)">Doenças Crônicas</button>
+                <button class="tab-btn" onclick="abrirAba('integral', this)">Check-up &amp; Mente</button>
+            </div>
+
+            <div id="aba-emagrecimento" class="tab-panel active">
+                <div>
+                    <h3>Emagrecimento Sustentável</h3>
+                    <p>Abordagem estruturada e respeitosa para perda de peso duradoura, avaliando hábitos, contexto de vida, composição corporal e fatores metabólicos.</p>
+                    <div class="chips">
+                        <span class="chip">Emagrecimento</span>
+                        <span class="chip">Obesidade</span>
+                        <span class="chip">Sobrepeso</span>
+                        <span class="chip">Síndrome metabólica</span>
+                        <span class="chip">Dificuldade de ganho de massa muscular</span>
+                    </div>
+                </div>
+                <div class="highlight-box">
+                    <h4>Diferenciais do acompanhamento</h4>
+                    <ul>
+                        <li>Explicações claras sem julgamentos</li>
+                        <li>Ajustes graduais que cabem na rotina</li>
+                        <li>Acompanhamento contínuo da evolução</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="aba-mulher" class="tab-panel">
+                <div>
+                    <h3>Saúde da Mulher &amp; Planejamento Reprodutivo</h3>
+                    <p>Cuidado atento às transições hormonais e decisões reprodutivas, com orientações transparentes para escolher o melhor caminho em cada fase.</p>
+                    <div class="chips">
+                        <span class="chip">Planejamento reprodutivo</span>
+                        <span class="chip">Inserção de DIU hormonal</span>
+                        <span class="chip">Inserção de implante hormonal</span>
+                        <span class="chip">Menopausa</span>
+                        <span class="chip">Climatério</span>
+                        <span class="chip">Endometriose</span>
+                        <span class="chip">Dismenorreia</span>
+                    </div>
+                </div>
+                <div class="highlight-box">
+                    <h4>O que você encontra</h4>
+                    <ul>
+                        <li>Escuta das queixas e sintomas femininos</li>
+                        <li>Opções contraceptivas e hormonais</li>
+                        <li>Decisões compartilhadas com segurança</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="aba-cronicas" class="tab-panel">
+                <div>
+                    <h3>Controle de Doenças Crônicas</h3>
+                    <p>Monitoramento regular e prevenção de complicações para condições metabólicas, cardiovasculares, hormonais e ósseas.</p>
+                    <div class="chips">
+                        <span class="chip">Diabetes</span>
+                        <span class="chip">Hipertensão arterial sistêmica</span>
+                        <span class="chip">Pressão alta</span>
+                        <span class="chip">Hipotireoidismo</span>
+                        <span class="chip">Dislipidemias / Hiperlipidemias</span>
+                        <span class="chip">Osteoporose</span>
+                    </div>
+                </div>
+                <div class="highlight-box">
+                    <h4>Foco clínico</h4>
+                    <ul>
+                        <li>Leitura e pedido criterioso de exames</li>
+                        <li>Revisão periódica de metas e medicações</li>
+                        <li>Prevenção a longo prazo</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="aba-integral" class="tab-panel">
+                <div>
+                    <h3>Check-up, Sono &amp; Saúde Emocional</h3>
+                    <p>Visão integrada entre saúde física, qualidade do sono e bem-estar mental, com experiência também na área de psiquiatria.</p>
+                    <div class="chips">
+                        <span class="chip">Check-up</span>
+                        <span class="chip">Insônia</span>
+                        <span class="chip">Experiência em Psiquiatria</span>
+                        <span class="chip">Prevenção de doenças</span>
+                    </div>
+                </div>
+                <div class="highlight-box">
+                    <h4>Olhar corpo e mente</h4>
+                    <ul>
+                        <li>Avaliação preventiva personalizada</li>
+                        <li>Atenção aos sinais de sobrecarga e sono</li>
+                        <li>Linguagem acessível em toda a consulta</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="consultorio">
+        <div class="container">
+            <div class="section-head center">
+                <h2>Consultório e Serviços</h2>
+                <p>Atendimento presencial particular em Campinas/SP</p>
+            </div>
+
+            <div class="care-grid">
+                <div class="care-card">
+                    <div>
+                        <div class="care-top">
+                            <h3>Consultas &amp; Check-up</h3>
+                            <span class="badge-price">R$ 400</span>
+                        </div>
+                        <p><strong>Clínica Duarte Medicina de Excelência</strong><br>Rua Visconde de Taunay, 420 – Sala 26, 2º Andar (Guanabara Office) – Vila Itapura, Campinas – SP, 13023-200</p>
+                        <p>Inclui consulta generalista, primeira consulta clínica, check-up (a partir de R$ 400), tratamento de obesidade (a partir de R$ 400) e consulta de retorno.</p>
+                        <p><strong>Pagamento:</strong> Particular • PIX</p>
+                    </div>
+                    <div class="care-actions">
+                        <a href="https://wa.me/5519993963800?text=Olá%20Dra.%20Dayane,%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" class="btn-wa">
+                            <i class="fa-brands fa-whatsapp"></i> Agendar Consulta
+                        </a>
+                        <a href="https://www.doctoralia.com.br/perfil/dayane-m-duarte" target="_blank" class="btn-outline">
+                            Doctoralia
+                        </a>
+                    </div>
+                </div>
+
+                <div class="care-card">
+                    <div>
+                        <div class="care-top">
+                            <h3>DIU e Implante Hormonal</h3>
+                            <span class="badge-price">A partir de R$ 2.600</span>
+                        </div>
+                        <p><strong>Clínica Duarte Medicina de Excelência</strong><br>Rua Visconde de Taunay, 420 – Sala 26, 2º Andar – Vila Itapura, Campinas – SP</p>
+                        <p>Inserção de implante hormonal (R$ 2.600) e inserção de DIU hormonal (a partir de R$ 2.600), com avaliação prévia e orientação detalhada.</p>
+                        <p><strong>Pagamento:</strong> Particular • PIX</p>
+                    </div>
+                    <div class="care-actions">
+                        <a href="https://wa.me/5519993963800?text=Olá%20Dra.%20Dayane,%20gostaria%20de%20saber%20mais%20sobre%20DIU%20ou%20Implante%20Hormonal." target="_blank" class="btn-wa">
+                            <i class="fa-brands fa-whatsapp"></i> Solicitar Informações
+                        </a>
+                        <a href="https://www.doctoralia.com.br/perfil/dayane-m-duarte" target="_blank" class="btn-outline">
+                            Doctoralia
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="avaliacoes" class="reviews-section">
+        <div class="container">
+            <div class="section-head center">
+                <h2 id="titulo-depoimentos" title="Duplo clique para gerenciar avaliações" style="cursor: pointer; user-select: none;">Opiniões dos pacientes</h2>
+                <p>Relatos verificados do perfil no Doctoralia</p>
+            </div>
+
+            <div class="reviews-grid" id="lista-avaliacoes"></div>
+
+            <div class="review-form-box">
+                <h3>Deixe sua avaliação</h3>
+                <p>Compartilhe como foi a sua experiência na consulta.</p>
+                <form id="form-avaliacao">
+                    <div class="field">
+                        <label for="nome">Seu nome</label>
+                        <input type="text" id="nome" placeholder="Ex: Ana Paula" required>
+                    </div>
+                    <div class="field">
+                        <label for="mensagem">Sua mensagem</label>
+                        <textarea id="mensagem" placeholder="Escreva seu comentário..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-send">Publicar avaliação</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>Dra. Dayane M Duarte • CRM-SP 264626 • Clínica Duarte Medicina de Excelência</p>
+            <small>Rua Visconde de Taunay, 420 – Sala 26, Vila Itapura, Campinas/SP</small>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5519993963800?text=Olá%20Dra.%20Dayane,%20vim%20pelo%20site." target="_blank" class="wa-float" title="WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script>
+        function abrirAba(id, botao) {
+            document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById('aba-' + id).classList.add('active');
+            botao.classList.add('active');
+        }
+
+        const STORAGE_KEY = 'dra_dayane_duarte_avaliacoes_v2';
+        const avaliacoesIniciais = [
+            { nome: "Rosemeire Santos", texto: "Médica muito atenciosa. Explica muito bem. É muito paciente." },
+            { nome: "Andrea", texto: "Atendeu no horário e foi muito prestativa e atenciosa, fazendo encaminhamento para exames necessários." },
+            { nome: "Jacqueline Lima", texto: "Dra. Dayane, uma profissional maravilhosa, atenciosa e que tira todas as dúvidas." },
+            { nome: "L. S.", texto: "Foi esclarecedora sobre os sintomas e indicação de tratamento correto." }
+        ];
+
+        function carregarAvaliacoes() {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            const lista = saved ? JSON.parse(saved) : avaliacoesIniciais;
+            const container = document.getElementById('lista-avaliacoes');
+            container.innerHTML = '';
+
+            lista.forEach((item, index) => {
+                const card = document.createElement('div');
+                card.className = 'review-card';
+                card.innerHTML = `
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="review-text">"${item.texto}"</p>
+                    <div class="review-author">— ${item.nome}</div>
+                    <button class="btn-delete" onclick="apagarAvaliacao(${index})">Excluir</button>
+                `;
+                container.appendChild(card);
+            });
+            atualizarVisibilidadeBotoesExclusao();
+        }
+
+        document.getElementById('form-avaliacao').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const nome = document.getElementById('nome').value.trim();
+            const mensagem = document.getElementById('mensagem').value.trim();
+            if (!nome || !mensagem) return;
+
+            const saved = localStorage.getItem(STORAGE_KEY);
+            const lista = saved ? JSON.parse(saved) : [...avaliacoesIniciais];
+            lista.unshift({ nome, texto: mensagem });
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(lista));
+
+            this.reset();
+            carregarAvaliacoes();
+            alert('Avaliação publicada com sucesso!');
+        });
+
+        function apagarAvaliacao(index) {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            const lista = saved ? JSON.parse(saved) : [...avaliacoesIniciais];
+            lista.splice(index, 1);
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(lista));
+            carregarAvaliacoes();
+        }
+
+        let modoAdm = false;
+        document.getElementById('titulo-depoimentos').addEventListener('dblclick', function() {
+            modoAdm = !modoAdm;
+            atualizarVisibilidadeBotoesExclusao();
+            alert(modoAdm ? "Modo de gerenciamento ativado! Botões de exclusão visíveis." : "Modo de gerenciamento desativado.");
+        });
+
+        function atualizarVisibilidadeBotoesExclusao() {
+            document.querySelectorAll('.btn-delete').forEach(btn => {
+                btn.style.display = modoAdm ? 'block' : 'none';
+            });
+        }
+
+        window.onload = carregarAvaliacoes;
+    </script>
+</body>
+</html>
